@@ -17,8 +17,8 @@ struct DefaultAppTextFieldStyle: TextFieldStyle {
                 RoundedRectangle(cornerRadius: 14)
                     .stroke(Color.appColor40, lineWidth: 2.0)
                     .frame(height: 56)
-            )
-            .padding()
+            ).listRowSeparator(.hidden)
+            
         }
     
     

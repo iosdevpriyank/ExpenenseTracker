@@ -26,6 +26,9 @@
 		B220917E2BF861E700249009 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220917D2BF861E700249009 /* SignupView.swift */; };
 		B22091812BF8620800249009 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22091802BF8620800249009 /* LoginView.swift */; };
 		B22091862BF9474C00249009 /* AppTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22091852BF9474C00249009 /* AppTextFieldStyle.swift */; };
+		B22091882BF9F69D00249009 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22091872BF9F69D00249009 /* PasswordField.swift */; };
+		B220918A2BFB236B00249009 /* CheckBoxViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22091892BFB236B00249009 /* CheckBoxViews.swift */; };
+		B220918C2BFB293600249009 /* HighlightedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220918B2BFB293600249009 /* HighlightedTextView.swift */; };
 		B2B06F7D2BF52990007ECE43 /* ExpensesTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B06F7C2BF52990007ECE43 /* ExpensesTrackerApp.swift */; };
 		B2B06F812BF52994007ECE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B06F802BF52994007ECE43 /* Assets.xcassets */; };
 		B2B06F842BF52994007ECE43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B06F832BF52994007ECE43 /* Preview Assets.xcassets */; };
@@ -53,6 +56,9 @@
 		B220917D2BF861E700249009 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		B22091802BF8620800249009 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B22091852BF9474C00249009 /* AppTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldStyle.swift; sourceTree = "<group>"; };
+		B22091872BF9F69D00249009 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
+		B22091892BFB236B00249009 /* CheckBoxViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxViews.swift; sourceTree = "<group>"; };
+		B220918B2BFB293600249009 /* HighlightedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedTextView.swift; sourceTree = "<group>"; };
 		B2B06F792BF52990007ECE43 /* ExpensesTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpensesTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B06F7C2BF52990007ECE43 /* ExpensesTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesTrackerApp.swift; sourceTree = "<group>"; };
 		B2B06F802BF52994007ECE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 				B22091792BF7B90800249009 /* Button */,
 				B220916A2BF724BB00249009 /* AnimatedText.swift */,
 				B22091742BF7AFD800249009 /* CustomIndicatorView.swift */,
+				B22091892BFB236B00249009 /* CheckBoxViews.swift */,
+				B220918B2BFB293600249009 /* HighlightedTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				B22091852BF9474C00249009 /* AppTextFieldStyle.swift */,
+				B22091872BF9F69D00249009 /* PasswordField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -296,14 +305,17 @@
 				B220916B2BF724BB00249009 /* AnimatedText.swift in Sources */,
 				B22091732BF79ED100249009 /* OnBoardingViews.swift in Sources */,
 				B2B06F7D2BF52990007ECE43 /* ExpensesTrackerApp.swift in Sources */,
+				B220918A2BFB236B00249009 /* CheckBoxViews.swift in Sources */,
 				B22091782BF7B43900249009 /* Color+Extensions.swift in Sources */,
 				B220917E2BF861E700249009 /* SignupView.swift in Sources */,
 				B22091862BF9474C00249009 /* AppTextFieldStyle.swift in Sources */,
+				B22091882BF9F69D00249009 /* PasswordField.swift in Sources */,
 				B220917B2BF7B94700249009 /* ButtonStyles.swift in Sources */,
 				B220916E2BF7384000249009 /* OnBoardModel.swift in Sources */,
 				B22091752BF7AFD800249009 /* CustomIndicatorView.swift in Sources */,
 				B22091812BF8620800249009 /* LoginView.swift in Sources */,
 				B2B06F8E2BF52A37007ECE43 /* LaunchScreenView.swift in Sources */,
+				B220918C2BFB293600249009 /* HighlightedTextView.swift in Sources */,
 				B22091672BF6667400249009 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
