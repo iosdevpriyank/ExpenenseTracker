@@ -3,8 +3,17 @@
 
 An Expense Tracker application built with SwiftUI and SwiftData for iOS devices. This app allows users to track their expenses, categorize them, and view summary statistics.
 
+## Design
+- Open source figma design used for application.
+https://www.figma.com/design/9QKONlLeaQ8N1dtxmAOWsa/Montra---Expense-Tracker-UI-Kit-(Community)?node-id=223-1
+
 ## Features
 
+- Onboarding Pagination - Design Done
+- Sign up 
+- Login
+- Logout option
+- Google Sign In / Sing Up
 - Add, edit, and delete expenses
 - Categorize expenses (e.g., Food, Travel, Utilities)
 - View total expenses and statistics
@@ -49,5 +58,5 @@ Contributions are welcome! Please open an issue or submit a pull request.
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 **Contact**
-For any questions or suggestions, please contact iosdev.priyank@gmail.com.
+For any questions or suggestions, please get in touch with iosdev.priyank@gmail.com.
 
