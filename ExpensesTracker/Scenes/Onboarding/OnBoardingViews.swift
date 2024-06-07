@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnBoardingViews: View {
     @State private var activeIntro: OnBoardModel = pageIntro[0]
-    @State private var path = NavigationPath()
+    @EnvironmentObject private var appState: NavigationState
     
     private let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     enum SwipeHVDirection: String {
@@ -18,67 +18,53 @@ struct OnBoardingViews: View {
     
     
     var body: some View {
-        NavigationStack(path: $path) {
-            VStack {
-                Spacer(minLength: 8.0)
-                IntroView(intro: $activeIntro, size: CGSize(width: 312.0, height: 312.0))
-                //                    .gesture(
-                //                        DragGesture()
-                //                            .onEnded({ value in
-                //                                let direction = self.detectDirection(value: value)
-                //                                if direction == .left {
-                //                                    changeIntro(true)
-                //                                } else if direction == .right {
-                //                                    changeIntro(false)
-                //                                }
-                //
-                //                            })
-                //                    )
-                    .onReceive(timer, perform: { _ in
-                        withAnimation {
-                            changeIntro()
-                            
-                        }
-                    })
-                
-                Spacer(minLength: 20)
-                // Custom Indicator View
-                CustomIndicatorView(totalPages: pageIntro.count, currentPage: pageIntro.firstIndex(of: activeIntro) ?? 0)
-                
-                Spacer(minLength: 40)
-                
-                Button {
-                    path.append("SignUpView")
-                } label: {
-                    Text("Sign Up")
-                        .frame(width: 312.0, height: 56.0, alignment: .center)
-                        .font(Font.Title_3)
-                }
-                .buttonStyle(VioletButton())
-                
-                
-                
-                Button {
-                    path.append("LoginView")
-                } label: {
-                    Text("Login")
-                        .frame(width: 312.0, height: 56.0, alignment: .center)
-                        .font(Font.Title_3)
-                }
-                .buttonStyle(LightVioletButton())
-                
-                
+        VStack {
+            Spacer(minLength: 8.0)
+            IntroView(intro: $activeIntro, size: CGSize(width: 312.0, height: 312.0))
+            //                    .gesture(
+            //                        DragGesture()
+            //                            .onEnded({ value in
+            //                                let direction = self.detectDirection(value: value)
+            //                                if direction == .left {
+            //                                    changeIntro(true)
+            //                                } else if direction == .right {
+            //                                    changeIntro(false)
+            //                                }
+            //
+            //                            })
+            //                    )
+                .onReceive(timer, perform: { _ in
+                    withAnimation {
+                        changeIntro()
+                        
+                    }
+                })
+            
+            Spacer(minLength: 20)
+            // Custom Indicator View
+            CustomIndicatorView(totalPages: pageIntro.count, currentPage: pageIntro.firstIndex(of: activeIntro) ?? 0)
+            
+            Spacer(minLength: 40)
+            
+            Button {
+                appState.appRoutes.append(.Signup)
+            } label: {
+                Text("Sign Up")
+                    .frame(width: 312.0, height: 56.0, alignment: .center)
+                    .font(Font.Title_3)
             }
-            .navigationDestination(for: String.self) { view in
-                switch view {
-                case "SignUpView":
-                    SignupView()
-                case "LoginView":
-                    LoginView()
-                default:
-                    OnBoardingViews()
-                }
+            .buttonStyle(VioletButton())
+            
+            
+            
+            Button {
+                appState.appRoutes.append(.Login)
+            } label: {
+                Text("Login")
+                    .frame(width: 312.0, height: 56.0, alignment: .center)
+                    .font(Font.Title_3)
             }
+            .buttonStyle(LightVioletButton())
         }
         
     }

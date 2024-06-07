@@ -15,10 +15,11 @@ struct SignupView: View {
     @State private var strPassword: String = ""
     @State private var isTermsCondition: Bool = false
     
-    @State private var path = NavigationPath()
+    @EnvironmentObject private var appState: NavigationState
+    
     
     var body: some View {
-        NavigationStack(path: $path) {
+        
             Form {
                 Section {
                     TextField("Name", text: $strUserName)
@@ -67,7 +68,7 @@ struct SignupView: View {
                         Text("Already have an account?")
                             .font(Font.Regular_3)
                         Button {
-                            
+                            appState.appRoutes.append(.Login)
                         } label: {
                             Text("Login")
                                 .foregroundColor(Color.violet100)
@@ -92,7 +93,7 @@ struct SignupView: View {
                         }
                     }
                 
-        }
+        
     }
 }
 

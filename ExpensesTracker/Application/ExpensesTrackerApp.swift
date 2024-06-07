@@ -10,24 +10,37 @@ import SwiftUI
 @main
 struct ExpensesTrackerApp: App {
     @State private var isLaunchScreen: Bool = true
+    
+    @StateObject private var navigationState = NavigationState()
+    
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                Group {
-                    if isLaunchScreen {
-                        LaunchScreenView()
-                    } else {
+            NavigationStack(path: $navigationState.appRoutes) {
+                ZStack {
+                    Group {
+                        if isLaunchScreen {
+                            LaunchScreenView()
+                        } else {
+                            OnBoardingViews()
+                        }
+                    }
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                            self.isLaunchScreen = false
+                        }
+                    }
+                }
+                .navigationDestination(for: Route.self) { appRoute in
+                    switch appRoute {
+                    case .Login:
+                        LoginView()
+                    case .Signup:
+                        SignupView()
+                    case .onBoarding:
                         OnBoardingViews()
                     }
                 }
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        self.isLaunchScreen = false
-                    }
-                }
-                
-            }
-            
+            }.environmentObject(navigationState)
         }
     }
 }
