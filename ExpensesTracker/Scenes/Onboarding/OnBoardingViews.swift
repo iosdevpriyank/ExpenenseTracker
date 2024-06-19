@@ -128,8 +128,6 @@ struct IntroView: View {
             }
             .frame(width: size.width)
             
-            
-            
         }
         
     }
